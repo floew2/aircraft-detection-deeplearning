@@ -1,0 +1,13 @@
+
+# train and val datasets (image directory or *.txt file with image paths)
+
+inp_img_pth : data/train/images
+inp_lab_pth : data/train/labels
+out_img_pth : data/train_aug/images
+out_lab_pth : data/train_aug/labels
+transformed_file_name : aug_out
+
+# class names
+CLASSES : ['Aircraft']
+
+
