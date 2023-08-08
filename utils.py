@@ -507,7 +507,7 @@ def visualize_val_batch_images(logs_dir):
 
         # Clear the previous output
         clear_output(wait=True)
-
+a
         # Display the selected image
         display(PIL.Image.open(selected_file).resize((800, 800)))
 
