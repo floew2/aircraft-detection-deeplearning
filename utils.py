@@ -317,8 +317,8 @@ def calibrate_yolov8(data_yaml, epochs=10, imgsz=512, optimization_params=None):
     Returns:
         None
     """
-    # Construct the command string for YOLOv8 training
-    command = f"yolo task=detect mode=train model=yolov8s.pt data={data_yaml} epochs={epochs} imgsz={imgsz}"
+    # Construct the command string for YOLOv8 training, small: yolov8s.pt, very large: yolov8x.pt
+    command = f"yolo task=detect mode=train model=yolov8x.pt data={data_yaml} epochs={epochs} imgsz={imgsz}"
 
     # Append optimization parameters if provided
     if optimization_params:
@@ -507,7 +507,7 @@ def visualize_val_batch_images(logs_dir):
 
         # Clear the previous output
         clear_output(wait=True)
-a
+
         # Display the selected image
         display(PIL.Image.open(selected_file).resize((800, 800)))
 
@@ -517,7 +517,8 @@ a
     # Display the widget
     display(val_batch_widget)
 
-def detect_objects(model, image_path, conf_thres=0.3, iou_thres=0.45):
+# Depricated, not used
+def detect_objects(model, image_path, conf_thres=0.5, iou_thres=0.65):
     """
     Detect objects in a new image using a YOLOv8 model.
 
@@ -766,11 +767,7 @@ def save_aug_image(transformed_image, out_img_pth, img_name):
     out_img_path = os.path.join(out_img_pth, img_name)
     cv2.imwrite(out_img_path, transformed_image)
 
-# Load CONSTANTS from YAML configuration
-with open("constants.yaml", 'r') as stream:
-    CONSTANTS = yaml.safe_load(stream)
-
-def load_and_apply_model(image_path, best_model_path, conf=0.25, iou=0.7):
+def load_and_apply_model(image_paths, best_model_path, conf, iou):
     """
     Load a YOLO model and apply it to a new image for object detection using the specified image path, confidence threshold, and IOU threshold.
 
@@ -780,20 +777,25 @@ def load_and_apply_model(image_path, best_model_path, conf=0.25, iou=0.7):
         iou (float): IOU threshold for non-maximum suppression (0 to 1).
 
     Returns:
-        results (list): List of Ultralytics detection results.
+        results (list): List of Ultralytics detection results
+        metrics: Validation assessment results
     """
     try:
-        colab_working_dir = os.getcwd()
 
-        # Load the new image
-        pil_img = Image.open(image_path, mode='r')
-        np_img = np.array(pil_img, dtype=np.uint8)
+        # Load the new image and get height / width
+        def get_image_size(image_path):
+            with Image.open(image_path) as img:
+                width, height = img.size
+            return width, height
         
+        image_path = image_paths
+        imgsz = get_image_size(image_path)
+
         # Load the YOLO model
         model = YOLO(best_model_path)
 
         # Predict with the model
-        results = model.predict([image_path], conf=conf, save=True, iou=iou)
+        results = model.predict([image_paths], conf=conf, save=True, iou=iou, imgsz=imgsz)
         metrics = model.val()
         
         return results, metrics
