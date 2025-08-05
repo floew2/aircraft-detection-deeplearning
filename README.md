@@ -4,7 +4,7 @@
 Aircraft detection from Earth observation satellite images is crucial for monitoring airport activities and mapping aircraft locations. While manual digitization is accurate, it becomes impractical for large regions or when fast assessments are required.
 
 ### Proposed Solution
-In this project, we test the YOLOv8 deep learning method to detect aircraft in high-resolution satellite images from Airbus' Pleiades twin satellites. YOLOv8 is a state-of-the-art object detection algorithm that has shown promising results in various applications. Inspiration for this test stems from Jeff Faudi´s code on [Kaggle](https://www.kaggle.com/code/jeffaudi/aircraft-detection-with-yolov5).
+In this project, YOLOv8 deep learning method is tested to detect aircraft in high-resolution satellite images from Airbus' Pleiades twin satellites. YOLOv8 is a state-of-the-art object detection algorithm that has shown promising results in various applications. Inspiration for this test stems from Jeff Faudi´s code on [Kaggle](https://www.kaggle.com/code/jeffaudi/aircraft-detection-with-yolov5).
 
 ![val_batch0_labels.jpg](images/Aircraft_predictions.png)
 
@@ -20,8 +20,6 @@ In this project, we test the YOLOv8 deep learning method to detect aircraft in h
 5. Model Evaluation: After training, we evaluated the model's performance using metrics like box loss, class loss, precision, recall, and mAP.
 
 6. Inference: The calibrated YOLOv8 model was applied to new satellite images for real-time aircraft detection.
-
-You can add the additional information to your README.md as follows:
 
 ### Technical Details
 The workflow was implemented and tested in Google Colab using a GPU runtime. This allowed for faster training and inference of the YOLOv8 model on the high-resolution satellite images.
