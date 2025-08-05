@@ -6,9 +6,6 @@ Aircraft detection from Earth observation satellite images is crucial for monito
 ### Proposed Solution
 In this project, YOLOv8 deep learning method is tested to detect aircraft in high-resolution satellite images from Airbus' Pleiades twin satellites. YOLOv8 is a state-of-the-art object detection algorithm that has shown promising results in various applications. Inspiration for this test stems from Jeff Faudi´s code on [Kaggle](https://www.kaggle.com/code/jeffaudi/aircraft-detection-with-yolov5).
 
-![val_batch0_labels.jpg](images/Aircraft_predictions.png)
-
-
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-green.svg)](https://github.com/ultralytics/ultralytics)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
