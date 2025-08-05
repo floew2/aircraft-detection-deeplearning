@@ -19,7 +19,6 @@ Aircraft detection from Earth observation satellite images is crucial for monito
 - 🔄 **Smart Tiling**: Automated image tiling with overlap handling for large-scale imagery
 - 🚀 **Data Augmentation**: Advanced augmentation pipeline using Albumentations
 - 📊 **Interactive Inference**: Real-time detection with adjustable parameters
-- 🏗️ **MLOps Ready**: Modular architecture with configuration management
 
 ## 🚀 Quick Start
 
