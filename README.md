@@ -1,11 +1,5 @@
 # Aircraft Detection in Satellite Images using YOLOv8
 
-### Problem Setting
-Aircraft detection from Earth observation satellite images is crucial for monitoring airport activities and mapping aircraft locations. While manual digitization is accurate, it becomes impractical for large regions or when fast assessments are required.
-
-### Proposed Solution
-In this project, YOLOv8 deep learning method is tested to detect aircraft in high-resolution satellite images from Airbus' Pleiades twin satellites. YOLOv8 is a state-of-the-art object detection algorithm that has shown promising results in various applications. Inspiration for this test stems from Jeff Faudi´s code on [Kaggle](https://www.kaggle.com/code/jeffaudi/aircraft-detection-with-yolov5).
-
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-green.svg)](https://github.com/ultralytics/ultralytics)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -17,7 +11,7 @@ In this project, YOLOv8 deep learning method is tested to detect aircraft in hig
 
 ## 🎯 Project Overview
 
-This project implements an automated aircraft detection system for high-resolution satellite imagery using YOLOv8, addressing the challenge of monitoring airport activities and aircraft locations at scale. The solution processes 2560×2560 pixel satellite images from Airbus' Pleiades twin satellites, achieving reliable detection through advanced deep learning techniques.
+Aircraft detection from Earth observation satellite images is crucial for monitoring airport activities and mapping aircraft locations. While manual digitization is accurate, it becomes impractical for large regions or when fast assessments are required. This project implements an automated aircraft detection system for high-resolution satellite imagery using YOLOv8, addressing the challenge of monitoring airport activities and aircraft locations at scale. The solution processes 2560×2560 pixel satellite images from Airbus' Pleiades twin satellites, achieving reliable detection through advanced deep learning techniques.
 
 ### Key Features
 - ✈️ **High-Resolution Processing**: Handles 2560×2560 pixel satellite images
